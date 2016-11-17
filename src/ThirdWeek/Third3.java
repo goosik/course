@@ -7,13 +7,17 @@ public class Third3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int size = sc.nextInt();
-
-        int[][] matr1 = MatrixUtils.genMatrix8(size);
-        String res1 = MatrixUtils.toString(matr1);
+        String text = sc.nextLine();
+        boolean res1 = palindrom(text);
         System.out.println(res1);
+    }
 
-
-
+    public static boolean palindrom(String string) {
+        for (int i = 0; i < string.length() / 2; ++i) {
+            if (string.charAt(i) != string.charAt(string.length() - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
